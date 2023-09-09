@@ -1,12 +1,15 @@
 const btn = document.querySelector(".submit-btn") as HTMLButtonElement;
-const dogPic = document.querySelector(".dog-pic") as HTMLImageElement;
+const dogPic = document.querySelector("pic-container") as HTMLDivElement;
 
-document.addEventListener("DOMContentLoaded", () => {
-    fetch('https://dog.ceo/api/breeds/image/random')
-})
+document.addEventListener("DOMContentLoaded", async () => {
+    console.log("DOM kar mikone")
+    await fetch("/").then(response => response.json()).then(data => console.log("data kar mikone"))
+    })
+
+
 
 btn.addEventListener("click", () => {
-    fetch('https://dog.ceo/api/breeds/image/random')
+    fetch('/')
     .then(response => response.json())
     .then(data => console.log(data))
     .catch(error => console.error(error));
