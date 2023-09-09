@@ -1,3 +1,66 @@
+@import url("https://fonts.googleapis.com/css2?family=Dosis:wght@700;800&family=Overpass:wght@400;700&family=Roboto:wght@400;700&display=swap");
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Dosis", Arial, Helvetica, sans-serif;
+}
+
 body {
+  height: 100vh;
+  width: 100%;
+}
+
+.background {
   background-image: url("../src/img/110f6dfd4e2a997c87fb3ca11d8cc935.jpg");
+  filter: grayscale(30%);
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  background-color: rgb(30, 30, 30);
+  border-radius: 30px;
+  width: 800px;
+  height: 500px;
+  padding: 20px;
+  position: relative;
+}
+
+.submit-btn {
+  position: absolute;
+  background-color: rgb(154, 56, 68);
+  color: white;
+  top: 445px;
+  left: 195px;
+  padding: 10px 100px 15px;
+  border: solid rgb(30, 30, 30) 10px;
+  border-radius: 50px;
+  cursor: pointer;
+  font-size: 35px;
+  transition: 300ms;
+}
+.submit-btn:active {
+  box-shadow: inset 10px 10px 10px rgba(0, 0, 0, 0.2);
+}
+.submit-btn:hover {
+  background-color: rgb(158, 196, 226);
+  color: rgb(30, 30, 30);
+}
+
+.pic-container {
+  background-color: aliceblue;
+  width: 100%;
+  height: 100%;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
 }
