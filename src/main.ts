@@ -3,7 +3,7 @@ const dogPic = document.querySelector("pic-container") as HTMLDivElement;
 
 document.addEventListener("DOMContentLoaded", async () => {
     console.log("DOM kar mikone")
-    await fetch("/").then(response => response.json()).then(data => console.log("data kar mikone"))
+    await fetch("/localhost4444").then(response => response.json()).then(data => console.log("data kar mikone"))
     })
 
 
