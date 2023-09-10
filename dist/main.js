@@ -9,10 +9,17 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 const btn = document.querySelector(".submit-btn");
-const dogPic = document.querySelector("pic-container");
+const dogPic = document.querySelector(".dog-pic");
+// const imageGenerator = () => {
+//     return new promise ((resolve, reject) => {
+//     })
+// }
 document.addEventListener("DOMContentLoaded", () => __awaiter(void 0, void 0, void 0, function* () {
-    console.log("DOM kar mikone");
-    yield fetch("/").then(response => response.json()).then(data => console.log("data kar mikone"));
+    yield fetch("https://dog.ceo/api/breeds/image/random")
+        .then(response => response.json())
+        .then(data => {
+        dogPic.src = data.message;
+    });
 }));
 btn.addEventListener("click", () => {
     fetch('/')

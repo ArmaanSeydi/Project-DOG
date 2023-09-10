@@ -1,11 +1,11 @@
 const btn = document.querySelector(".submit-btn") as HTMLButtonElement;
-const dogPic = document.querySelector(".dog-pic") as HTMLDivElement;
+const dogPic = document.querySelector(".dog-pic") as HTMLImageElement;
 
-const imageGenerator = () => {
-    return new promise ((resolve, reject) => {
+// const imageGenerator = () => {
+//     return new promise ((resolve, reject) => {
 
-    })
-}
+//     })
+// }
 
 document.addEventListener("DOMContentLoaded", async () => {
     await fetch("https://dog.ceo/api/breeds/image/random")
