@@ -10,20 +10,16 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 };
 const btn = document.querySelector(".submit-btn");
 const dogPic = document.querySelector(".dog-pic");
-// const imageGenerator = () => {
-//     return new promise ((resolve, reject) => {
-//     })
-// }
-document.addEventListener("DOMContentLoaded", () => __awaiter(void 0, void 0, void 0, function* () {
+const imageGenerator = () => __awaiter(void 0, void 0, void 0, function* () {
     yield fetch("https://dog.ceo/api/breeds/image/random")
         .then(response => response.json())
         .then(data => {
         dogPic.src = data.message;
     });
-}));
+});
+document.addEventListener("DOMContentLoaded", () => {
+    imageGenerator();
+});
 btn.addEventListener("click", () => {
-    fetch('/')
-        .then(response => response.json())
-        .then(data => console.log(data))
-        .catch(error => console.error(error));
+    imageGenerator();
 });
