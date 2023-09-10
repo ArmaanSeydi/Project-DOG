@@ -52,6 +52,17 @@ body {
   background-color: rgb(158, 196, 226);
   color: rgb(30, 30, 30);
 }
+.auto-btn {
+  background-color: white;
+  position: absolute;
+  padding: 20px;
+  border-radius: 50%;
+  border: solid rgb(30, 30, 30) 5px;
+  top: 465px;
+  left: 544px;
+  z-index: 2;
+  cursor: pointer;
+}
 
 .pic-container {
   background-color: aliceblue;
