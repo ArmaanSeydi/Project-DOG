@@ -1,9 +1,18 @@
 const btn = document.querySelector(".submit-btn") as HTMLButtonElement;
-const dogPic = document.querySelector("pic-container") as HTMLDivElement;
+const dogPic = document.querySelector(".dog-pic") as HTMLDivElement;
+
+const imageGenerator = () => {
+    return new promise ((resolve, reject) => {
+
+    })
+}
 
 document.addEventListener("DOMContentLoaded", async () => {
-    console.log("DOM kar mikone")
-    await fetch("/localhost4444").then(response => response.json()).then(data => console.log("data kar mikone"))
+    await fetch("https://dog.ceo/api/breeds/image/random")
+    .then(response => response.json())
+    .then(data => {
+        dogPic.src = data.message;
+    })
     })
 
 
