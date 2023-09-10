@@ -63,9 +63,13 @@ body {
   z-index: 2;
   cursor: pointer;
 }
-
+.active {
+  background-color: red;
+}
 .pic-container {
-  background-color: aliceblue;
+  background-image: url("../src/img/dae003d5815aa48f189af1bf647b53a3.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
   width: 100%;
   height: 100%;
   border-radius: 20px;
