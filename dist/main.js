@@ -9,14 +9,21 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 const btn = document.querySelector(".submit-btn");
-const dogPic = document.querySelector("pic-container");
-document.addEventListener("DOMContentLoaded", () => __awaiter(void 0, void 0, void 0, function* () {
-    console.log("DOM kar mikone");
-    yield fetch("/").then(response => response.json()).then(data => console.log("data kar mikone"));
-}));
-btn.addEventListener("click", () => {
-    fetch('/')
+const dogPic = document.querySelector(".dog-pic");
+// const imageGenerator = () => {
+//     return new promise ((resolve, reject) => {
+//     })
+// }
+btn.addEventListener("click", () => __awaiter(void 0, void 0, void 0, function* () {
+    yield fetch("http://localhost:4444/")
         .then(response => response.json())
-        .then(data => console.log(data))
-        .catch(error => console.error(error));
-});
+        .then(data => {
+        dogPic.src = data.src;
+    });
+}));
+// btn.addEventListener("click", () => {
+//     fetch('/')
+//     .then(response => response.json())
+//     .then(data => console.log(data))
+//     .catch(error => console.error(error));
+// })

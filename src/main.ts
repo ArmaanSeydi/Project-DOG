@@ -1,25 +1,10 @@
 const btn = document.querySelector(".submit-btn") as HTMLButtonElement;
-const dogPic = document.querySelector(".dog-pic") as HTMLDivElement;
+const dogPic = document.querySelector(".dog-pic") as HTMLImageElement;
 
-const imageGenerator = () => {
-    return new promise ((resolve, reject) => {
-
-    })
-}
-
-document.addEventListener("DOMContentLoaded", async () => {
-    await fetch("https://dog.ceo/api/breeds/image/random")
+btn.addEventListener("click", async () => {
+    await fetch("http://localhost:4444/")
     .then(response => response.json())
     .then(data => {
-        dogPic.src = data.message;
+        dogPic.src = data.src;
     })
     })
-
-
-
-btn.addEventListener("click", () => {
-    fetch('/')
-    .then(response => response.json())
-    .then(data => console.log(data))
-    .catch(error => console.error(error));
-})

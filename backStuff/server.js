@@ -9,6 +9,11 @@ const db = mongoose.connection;
 db.on("error", (err) => console.log(err));
 db.once("open", () => console.log("Connected to DB"));
 
+app.use((req, res, next) => {
+  res.setHeader('Access-Control-Allow-Origin', '*');
+  next();
+});
+
 app.get("/", async (req, res) => {
   let fetchedDog;
   await fetch("https://dog.ceo/api/breeds/image/random")
@@ -22,9 +27,9 @@ app.get("/", async (req, res) => {
     const newDog = await dog_db_model.save();
     res
       .status(201)
-      .send(`<img class="dog-pic" src="${newDog.src}" alt="image of a Dog"/>`);
+      .json({"src": newDog.src});
   } catch (error) {
-    console.log(error.mongoose);
+    console.log(error.message);
   }
 });
 app.get("/all", async (req, res) => {
